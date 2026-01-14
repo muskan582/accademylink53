@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Landing Page</title>
+<title>Trade With Pankaj</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -17,236 +16,159 @@
 }
 
 body{
-  text-align:center;
-  color:white;
-  background:black;
-  overflow:hidden;
-  height:100vh;
-}
-
-/* Background */
-.background{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:url('https://skilln.site/image/pbb.jpeg') no-repeat center/cover;
-  filter:blur(1px);
-  z-index:-2;
-}
-.overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  z-index:-1;
-}
-
-/* Bubble animation */
-.bubbles span{
-  position:absolute;
-  bottom:-50px;
-  width:20px;
-  height:20px;
-  background:rgba(255,255,255,0.2);
-  border-radius:50%;
-  animation:rise 10s infinite linear;
-}
-.bubbles span:nth-child(2){width:30px;height:30px;left:20%;animation-duration:7s;}
-.bubbles span:nth-child(3){width:40px;height:40px;left:40%;animation-duration:9s;}
-.bubbles span:nth-child(4){width:50px;height:50px;left:60%;animation-duration:6s;}
-.bubbles span:nth-child(5){width:60px;height:60px;left:80%;animation-duration:8s;}
-
-@keyframes rise{
-  0%{bottom:-50px;opacity:0;}
-  50%{opacity:1;}
-  100%{bottom:100%;opacity:0;}
-}
-
-/* Center box */
-.container{
-  position:relative;
-  z-index:2;
+  background:#000;
+  color:#fff;
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
-  padding:15px;
+  text-align:center;
 }
 
-.blur-box{
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(12px);
-  border-radius:15px;
-  padding:25px;
-  width:90%;
-  max-width:400px;
-  box-shadow:0 4px 15px rgba(255,255,255,0.2);
+/* MAIN WRAPPER */
+.main{
+  width:100%;
+  max-width:420px;
+  padding:25px 15px 40px;
+  position:relative;
 }
 
-h1{
-  font-size:24px;
-  color:#00e6ff;
-  text-transform:uppercase;
+/* PROFILE IMAGE */
+.profile-wrap{
+  display:flex;
+  justify-content:center;
+  margin-bottom:15px;
 }
 
-.timer{
-  font-size:22px;
-  font-weight:bold;
-  margin:10px 0;
-}
-
-.profile img{
-  width:150px;
+.profile-wrap img{
+  width:130px;
+  height:130px;
   border-radius:50%;
-  margin:10px 0;
-  border:3px solid #00e6ff;
-  box-shadow:0 0 15px #00e6ff;
+  border:4px solid #00e6d0;
+  box-shadow:0 0 20px rgba(0,230,208,.8);
 }
 
-/* Button animation */
-@keyframes shine{
-  0%{background-position:-200%;}
-  100%{background-position:200%;}
+/* DIVIDER LINE */
+.divider{
+  width:100%;
+  height:5px;
+  background:#3ccfcf;
+  margin:18px 0 22px;
 }
-@keyframes zoomInOut{
+
+/* TITLE */
+h1{
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#ff3c3c;
+}
+
+/* CONTENT */
+.content{
+  margin-top:15px;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.content span{
+  display:block;
+}
+
+/* CTA BUTTON */
+.cta{
+  margin:30px auto 20px;
+}
+
+.cta a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:#7CFC00;
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+  padding:16px 18px;
+  border-radius:14px;
+  box-shadow:0 0 25px rgba(124,252,0,.6);
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
   0%{transform:scale(1);}
-  50%{transform:scale(1.15);}
+  50%{transform:scale(1.05);}
   100%{transform:scale(1);}
 }
 
-.view-btn{
-  display:inline-block;
-  height:45px;
-  line-height:45px;
-  padding:0 24px;
-  border-radius:35px;
-  font-size:16px;
-  font-weight:600;
-  text-transform:uppercase;
-  color:#fff;
-  text-decoration:none;
-  background:linear-gradient(45deg,#32B0ED,#3a7bd5);
-  background-size:400% 400%;
-  animation:shine 8s linear infinite, zoomInOut 3s ease-in-out infinite;
-  box-shadow:0 15px 30px rgba(50,176,237,0.6),
-             inset 0 0 15px rgba(50,176,237,0.8);
+/* COUNTDOWN */
+.timer{
+  margin-top:18px;
+  font-size:22px;
+  font-weight:700;
+  color:#ff0000;
+  letter-spacing:2px;
 }
 
-.footer-text{
-  font-size:13px;
-  margin-top:15px;
-  opacity:0.85;
-}
-
-/* CREDIT */
-.credit{
-  position:relative;
-  z-index:3;
-  margin-top:-40px;
-  text-align:center;
+.timer small{
+  display:block;
   font-size:12px;
-  color:#00e6ff;
-  font-weight:600;
+  color:#aaa;
+  margin-top:4px;
 }
-.credit a{
-  color:#00ffcc;
-  text-decoration:none;
+
+/* FOOTER */
+.footer{
+  margin-top:12px;
+  font-size:11px;
+  color:#8a2be2;
 }
-.credit a:hover{ text-decoration:underline; }
 </style>
-
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1985763958654953');
-fbq('track','PageView');
-</script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1985763958654953&ev=PageView&noscript=1"/>
-</noscript>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1353695856212801');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1353695856212801&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '884297527752605');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=884297527752605&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
-
+<!-- Meta Pixel Code --> <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1353695856212801'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1353695856212801&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code --> <!-- Meta Pixel Code --> <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '884297527752605'); fbq('track', 'PageView'); </script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=884297527752605&ev=PageView&noscript=1" /></noscript> <!-- End Meta Pixel Code -->
 <body>
 
-<div class="background"></div>
-<div class="overlay"></div>
+<div class="main">
 
-<div class="bubbles">
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
-
-<div class="container">
-  <div class="blur-box">
-    <h1>Pankaj Bhardwaj Way 2laabh11 (Official)</h1>
-    <p>💰 100% Free Options Trade with Up to 95% Accuracy! 🎯</p>
-
-    <div class="timer"><span id="countdown">3</span> SECONDS</div>
-
-    <div class="profile">
-      <img src="https://skilln.site/image/paankaj.jpg" alt="Trading Logo">
-    </div>
-
-    <h2>78,8976 Subscribers</h2>
-    <p>✅ BankNifty, Nifty, Stock Options Covered 💹</p>
-
-    <a href="https://t.me/+ttpAmvopCI84MTk1" class="view-btn">
-      JOIN NOW FOR FREE
-    </a>
-
-    <p class="footer-text">
-      💎 Trusted by thousands of traders worldwide! 🌍
-    </p>
+  <!-- PROFILE -->
+  <div class="profile-wrap">
+    <img src="https://skilln.site/image/paankaj.jpg" alt="Profile">
   </div>
-</div>
 
-<!-- ADS CREDIT -->
-<div class="credit">
-  Ads managed by 
-  <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank">@Nexgroww_agency</a>
+  <!-- LINE -->
+  <div class="divider"></div>
+
+  <!-- TITLE -->
+  <h1>TRADE WITH PANKAJ BHARDWAJ</h1>
+
+  <!-- CONTENT (SAME AS BEFORE) -->
+  <div class="content">
+    <span>🚀 BEST RESULTS PROVIDED Nifty, Banknifty & Stock Calls 🚀</span>
+    <span>🔥 Join with us on a trading journey with the Best Trading Expert 🔥</span>
+    <span>📊 Free Training Signal 📊</span>
+    <span>🏆 DAILY 7-8 Calls By Experts 🏆</span>
+    <span>🇮🇳 14+ Years of Experience in Share Market 🇮🇳</span>
+    <span style="color:#8a2be2;">All suggestions given are for educational purposes only.</span>
+  </div>
+
+  <!-- BUTTON -->
+  <div class="cta">
+    <a href="https://t.me/+ttpAmvopCI84MTk1" target="_blank">
+      🚀 JOIN FREE TELEGRAM CHANNEL 🚀
+    </a>
+  </div>
+
+  <!-- TIMER -->
+  <div class="timer">
+    00 : 00 : 00 : 16
+    <small>DAYS &nbsp;&nbsp; HOURS &nbsp;&nbsp; MINUTES &nbsp;&nbsp; SECONDS</small>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Ads managed by @Nexgroww_agency
+  </div>
+
 </div>
 
 </body>
